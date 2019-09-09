@@ -9,4 +9,4 @@ RUN apk update && \
 COPY entrypoint.sh /usr/local/bin/xmrig.sh
 EXPOSE 8080
 
-CMD ["xmrig.sh"]
+ENTRYPOINT  ["xmrig.sh"]
