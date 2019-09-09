@@ -1,3 +1,12 @@
-FROM xmrig/xmrig
+FROM alpine:3.8
 
-RUN xmrig/xmrig -o pool.supportxmr.com:5555 -u 46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir  -p x
+ENV VERSION 2.6.4
+
+RUN apk update && \
+    apk add git make g++ cmake \
+        libuv-dev libmicrohttpd-dev --no-cache
+
+COPY entrypoint.sh /usr/local/bin/xmrig.sh
+EXPOSE 8080
+
+CMD ["xmrig.sh"]
