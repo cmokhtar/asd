@@ -7,6 +7,5 @@ RUN apk update && \
         libuv-dev libmicrohttpd-dev --no-cache
 
 COPY entrypoint.sh /usr/local/bin/xmrig.sh
-EXPOSE 8080
 
-ENTRYPOINT  ["xmrig.sh"]
+ENTRYPOINT ["xmrig.sh"]
