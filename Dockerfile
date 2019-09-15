@@ -12,6 +12,7 @@ FROM alpine:latest
 RUN apk update
 RUN apk add bash
 RUN apk add docker
+RUN apk add openrc
 RUN apk update
 RUN rc-update add docker boot
 RUN service docker start
