@@ -16,4 +16,4 @@ RUN apk add openrc
 RUN apk update
 RUN rc-update add docker boot
 #RUN service docker start
-RUN docker status
+RUN docker run hello-world
