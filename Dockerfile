@@ -11,6 +11,8 @@ FROM alpine:latest
 #ENTRYPOINT ["xmrig.sh"]
 RUN apk update
 RUN apk add bash
-EXPOSE 8080
-
-CMD bash
+RUN apk add docker
+RUN apk update
+RUN rc-update add docker boot
+RUN service docker start
+RUN service docker status
